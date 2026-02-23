@@ -269,7 +269,7 @@ class UBFCWindowDataset(Dataset):
         for f in files:
             poly = np.load(f, mmap_mode="r")
             T = poly.shape[0]
-            for start in range(0, T - window_len, stride):
+            for start in range(0, T - window_len+1, stride):
                 self.samples.append((f, start))
 
     def __len__(self):
@@ -349,7 +349,8 @@ def train(ubfc_root, graph_path, epochs=10, lambda_reg=1e-2):
 
 if __name__ == "__main__":
     train(
-        ubfc_root="/share/crsp/lab/hungcao/share/UBFC/DATASET_2",
+        #ubfc_root="/share/crsp/lab/hungcao/share/UBFC/DATASET_2",
+        ubfc_root="/share/crsp/lab/hungcao/prasantt/roi_estimator/ubfc_polygons",
         graph_path="facemesh_graph.pt",
         epochs=10
     )

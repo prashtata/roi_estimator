@@ -1,0 +1,81 @@
+{
+  "os":  "Linux-5.14.0-570.39.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "python":  "CPython 3.9.21",
+  "startedAt":  "2026-02-23T05:27:21.165471Z",
+  "program":  "/share/crsp/lab/hungcao/prasantt/roi_estimator/full_pipeline_updated.py",
+  "codePath":  "full_pipeline_updated.py",
+  "codePathLocal":  "full_pipeline_updated.py",
+  "git":  {
+    "remote":  "git@github.com:prashtata/roi_estimator.git",
+    "commit":  "c3470c22a4bef64399fa981a37b0c4fb1b438a8e"
+  },
+  "email":  "prasantt@uci.edu",
+  "root":  "/share/crsp/lab/hungcao/prasantt/roi_estimator",
+  "host":  "hpc3-gpu-18-00",
+  "executable":  "/usr/bin/python3",
+  "cpu_count":  40,
+  "cpu_count_logical":  40,
+  "gpu":  "Tesla V100-FHHL-16GB",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "226695716864",
+      "used":  "151236104192"
+    }
+  },
+  "memory":  {
+    "total":  "404863434752"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla V100-FHHL-16GB",
+      "memoryTotal":  "17179869184",
+      "cudaCores":  5120,
+      "architecture":  "Volta",
+      "uuid":  "GPU-b1bd306c-f146-7476-02ea-534d3da505f0"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "slurm":  {
+    "cluster_name":  "hpc3",
+    "conf":  "/etc/slurm/slurm.conf",
+    "cpus_on_node":  "8",
+    "cpus_per_task":  "8",
+    "gpus_on_node":  "1",
+    "gtids":  "0",
+    "job_account":  "hungcao_lab_gpu",
+    "job_cpus_per_node":  "8",
+    "job_end_time":  "1771997236",
+    "job_gid":  "2651030",
+    "job_gpus":  "2",
+    "job_id":  "48780892",
+    "job_name":  "gprgm_train",
+    "job_nodelist":  "hpc3-gpu-18-00",
+    "job_num_nodes":  "1",
+    "job_partition":  "gpu",
+    "job_qos":  "normal",
+    "job_start_time":  "1771824436",
+    "job_uid":  "2651030",
+    "job_user":  "prasantt",
+    "jobid":  "48780892",
+    "localid":  "0",
+    "mem_per_cpu":  "3072",
+    "nnodes":  "1",
+    "nodeid":  "0",
+    "nodelist":  "hpc3-gpu-18-00",
+    "nprocs":  "1",
+    "ntasks":  "1",
+    "oom_kill_step":  "0",
+    "prio_process":  "0",
+    "procid":  "0",
+    "script_context":  "prolog_task",
+    "submit_dir":  "/share/crsp/lab/hungcao/prasantt/roi_estimator",
+    "submit_host":  "login-i16",
+    "task_pid":  "1425568",
+    "tasks_per_node":  "1",
+    "topology_addr":  "hpc3-gpu-18-00",
+    "topology_addr_pattern":  "node",
+    "tres_per_task":  "cpu=8"
+  },
+  "writerId":  "8a8rutfdhumlwhorka20xucoinilfcfj"
+}
