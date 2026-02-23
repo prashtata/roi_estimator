@@ -1,0 +1,40 @@
+{
+  "os":  "Linux-6.18.9-arch1-2-x86_64-with-glibc2.43",
+  "python":  "CPython 3.12.0",
+  "startedAt":  "2026-02-23T02:39:35.878299Z",
+  "program":  "/home/daevinci/Documents/projects/roi_estimator/full_pipline updated.py",
+  "codePath":  "full_pipline updated.py",
+  "codePathLocal":  "full_pipline updated.py",
+  "git":  {
+    "remote":  "https://github.com/prashtata/roi_estimator.git",
+    "commit":  "a41cb2c0f75dba2a7f24984166a83b0b0783f6cb"
+  },
+  "email":  "prasantt@uci.edu",
+  "root":  "/home/daevinci/Documents/projects/roi_estimator",
+  "host":  "daevinci",
+  "executable":  "/home/daevinci/anaconda3/envs/mediapipe/bin/python",
+  "cpu_count":  6,
+  "cpu_count_logical":  12,
+  "gpu":  "NVIDIA GeForce GTX 1660 Ti",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "257802387456",
+      "used":  "211664740352"
+    }
+  },
+  "memory":  {
+    "total":  "16086065152"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce GTX 1660 Ti",
+      "memoryTotal":  "6442450944",
+      "cudaCores":  1536,
+      "architecture":  "Turing",
+      "uuid":  "GPU-b976c11e-aff1-4747-535e-3c9546bb7c76"
+    }
+  ],
+  "cudaVersion":  "13.1",
+  "writerId":  "m07h3nco91uh3xdp1kgp09lczn3m98mw"
+}

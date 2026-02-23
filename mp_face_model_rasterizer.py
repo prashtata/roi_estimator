@@ -1,3 +1,10 @@
+#TODO: 1. Depth mapping/Occlusion
+#      2. Temporal Smoothing
+
+# Precompute UV lookup table
+# Depth buffer?
+# Give patch ready outputs
+
 import cv2
 import numpy as np
 import mediapipe as mp
@@ -6,6 +13,9 @@ from canonical_tabulizer import rasterization_inputs
 
 canonical_face_model_path = pathlib.Path("canonical_face_model.obj")
 verts_len, vertex_uvs, triangles = rasterization_inputs(str(canonical_face_model_path))
+
+UV_LANDMARKS = vertex_uvs
+TRIANGLES = triangles
 
 # Initialize MediaPipe Face Mesh
 mp_face_mesh = mp.solutions.face_mesh
@@ -107,56 +117,56 @@ def build_canonical_face_uv_map(frame_bgr, landmarks):
     return tex
 
 
-# Start webcam
-cap = cv2.VideoCapture(0)
+# # Start webcam
+# cap = cv2.VideoCapture(0)
 
-with mp_face_mesh.FaceMesh(
-    max_num_faces=1,           # Detect only 1 face
-    refine_landmarks=False,     # Include iris landmarks
-    min_detection_confidence=0.5,
-    min_tracking_confidence=0.8
-) as face_mesh:
+# with mp_face_mesh.FaceMesh(
+#     max_num_faces=1,           # Detect only 1 face
+#     refine_landmarks=False,     # Include iris landmarks
+#     min_detection_confidence=0.5,
+#     min_tracking_confidence=0.8
+# ) as face_mesh:
     
-    vertices = np.zeros((468, 3), dtype=np.float32)
+#     vertices = np.zeros((468, 3), dtype=np.float32)
     
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            break
+#     while cap.isOpened():
+#         ret, frame = cap.read()
+#         if not ret:
+#             break
         
-        # Convert to RGB
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        rgb_frame.flags.writeable = False
+#         # Convert to RGB
+#         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+#         rgb_frame.flags.writeable = False
         
-        # Process the frame
-        results = face_mesh.process(rgb_frame)
+#         # Process the frame
+#         results = face_mesh.process(rgb_frame)
         
-        rgb_frame.flags.writeable = True
-        frame = cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2BGR)
+#         rgb_frame.flags.writeable = True
+#         frame = cv2.cvtColor(rgb_frame, cv2.COLOR_RGB2BGR)
         
-        if results.multi_face_landmarks:
-            face_landmarks = results.multi_face_landmarks[0]  # single face
-            # Efficiently convert to ndarray
-            vertices[:] = np.array([[lm.x, lm.y, lm.z] for lm in face_landmarks.landmark], dtype=np.float32)
+#         if results.multi_face_landmarks:
+#             face_landmarks = results.multi_face_landmarks[0]  # single face
+#             # Efficiently convert to ndarray
+#             vertices[:] = np.array([[lm.x, lm.y, lm.z] for lm in face_landmarks.landmark], dtype=np.float32)
 
-            if vertices.shape[0] != verts_len:
-                raise ValueError(
-                    f"Runtime vertex count {vertices.shape[0]} "
-                    f"!= canonical OBJ vertex count {verts_len}"
-                )
+#             if vertices.shape[0] != verts_len:
+#                 raise ValueError(
+#                     f"Runtime vertex count {vertices.shape[0]} "
+#                     f"!= canonical OBJ vertex count {verts_len}"
+#                 )
                 
-        # Build UV texture by sampling from the frame
-        uv_tex = build_canonical_face_uv_map(frame, vertices)
+#         # Build UV texture by sampling from the frame
+#         uv_tex = build_canonical_face_uv_map(frame, vertices)
 
-        # Show both the webcam and the UV texture
-        cv2.imshow("Frame", frame)
-        cv2.imshow("Face UV Texture", uv_tex)
+#         # Show both the webcam and the UV texture
+#         cv2.imshow("Frame", frame)
+#         cv2.imshow("Face UV Texture", uv_tex)
 
-        if cv2.waitKey(1) & 0xFF == 27:
-            break
+#         if cv2.waitKey(1) & 0xFF == 27:
+#             break
             
-        else:
-            continue
+#         else:
+#             continue
 
-cap.release()
-cv2.destroyAllWindows()
+# cap.release()
+# cv2.destroyAllWindows()

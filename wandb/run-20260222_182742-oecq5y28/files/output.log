@@ -1,0 +1,23 @@
+/home/daevinci/anaconda3/envs/mediapipe/lib/python3.12/site-packages/google/protobuf/symbol_database.py:55: UserWarning: SymbolDatabase.GetPrototype() is deprecated. Please use message_factory.GetMessageClass() instead. SymbolDatabase.GetPrototype() will be removed soon.
+  warnings.warn('SymbolDatabase.GetPrototype() is deprecated. Please '
+Traceback (most recent call last):
+  File "/home/daevinci/Documents/projects/roi_estimator/full_pipline updated.py", line 364, in <module>
+    train(
+  File "/home/daevinci/Documents/projects/roi_estimator/full_pipline updated.py", line 325, in train
+    for frames, lms in loader:
+  File "/home/daevinci/anaconda3/envs/mediapipe/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 732, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/daevinci/anaconda3/envs/mediapipe/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 788, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/daevinci/anaconda3/envs/mediapipe/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+            ~~~~~~~~~~~~^^^^^
+  File "/home/daevinci/Documents/projects/roi_estimator/full_pipline updated.py", line 301, in __getitem__
+    lms = torch.tensor(np.stack(lms), dtype=torch.float32)
+                       ^^^^^^^^^^^^^
+  File "/home/daevinci/anaconda3/envs/mediapipe/lib/python3.12/site-packages/numpy/_core/shape_base.py", line 370, in _stack_dispatcher
+    def _stack_dispatcher(arrays, axis=None, out=None, *,
+
+KeyboardInterrupt

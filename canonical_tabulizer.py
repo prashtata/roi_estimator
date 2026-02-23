@@ -183,6 +183,6 @@ if __name__ == "__main__":
         str(obj_path)
     )
 
-    print("Loaded vertices:", verts_shape)
+    print("Loaded vertices:", verts_len)
     print("Vertex UVs:", vertex_uvs.shape)
     print("Triangles:", triangles.shape)
