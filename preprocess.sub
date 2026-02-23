@@ -1,0 +1,13 @@
+#!/bin/bash -l
+#
+#SBATCH --job-name=gprgm_train
+#SBATCH --account=hungcao_lab_gpu 
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:1
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --error=slurm-%J.err
+#SBATCH --output=slurm-%J.out
+
+python3 preprocess_ubfc_polygons.py

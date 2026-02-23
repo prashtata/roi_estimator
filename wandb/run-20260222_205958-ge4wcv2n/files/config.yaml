@@ -1,0 +1,97 @@
+_wandb:
+    value:
+        cli_version: 0.25.0
+        e:
+            0q7ctf7sxt5j7cjmbnbub482ozsc2zgl:
+                codePath: full_pipeline_updated.py
+                codePathLocal: full_pipeline_updated.py
+                cpu_count: 32
+                cpu_count_logical: 64
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "482651389952"
+                        used: "147865223168"
+                email: prasantt@uci.edu
+                executable: /usr/bin/python3
+                git:
+                    commit: aed6273da038309bc9548e36e47da860479c1c03
+                    remote: git@github.com:prashtata/roi_estimator.git
+                gpu: NVIDIA A30
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 3584
+                      memoryTotal: "25769803776"
+                      name: NVIDIA A30
+                      uuid: GPU-35439614-8e25-177f-bc76-eeddcc459b59
+                host: hpc3-gpu-l54-09
+                memory:
+                    total: "235671379968"
+                os: Linux-5.14.0-570.39.1.el9_6.x86_64-x86_64-with-glibc2.34
+                program: /share/crsp/lab/hungcao/prasantt/roi_estimator/full_pipeline_updated.py
+                python: CPython 3.9.21
+                root: /share/crsp/lab/hungcao/prasantt/roi_estimator
+                slurm:
+                    cluster_name: hpc3
+                    conf: /etc/slurm/slurm.conf
+                    cpus_on_node: "8"
+                    cpus_per_task: "8"
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: hungcao_lab_gpu
+                    job_cpus_per_node: "8"
+                    job_end_time: "1771995592"
+                    job_gid: "2651030"
+                    job_gpus: "0"
+                    job_id: "48780423"
+                    job_name: gprgm_train
+                    job_nodelist: hpc3-gpu-l54-09
+                    job_num_nodes: "1"
+                    job_partition: gpu
+                    job_qos: normal
+                    job_start_time: "1771822792"
+                    job_uid: "2651030"
+                    job_user: prasantt
+                    jobid: "48780423"
+                    localid: "0"
+                    mem_per_cpu: "3072"
+                    nnodes: "1"
+                    nodeid: "0"
+                    nodelist: hpc3-gpu-l54-09
+                    nprocs: "1"
+                    ntasks: "1"
+                    oom_kill_step: "0"
+                    prio_process: "0"
+                    procid: "0"
+                    script_context: prolog_task
+                    submit_dir: /share/crsp/lab/hungcao/prasantt/roi_estimator
+                    submit_host: login-i16
+                    task_pid: "2138538"
+                    tasks_per_node: "1"
+                    topology_addr: hpc3-gpu-l54-09
+                    topology_addr_pattern: node
+                    tres_per_task: cpu=8
+                startedAt: "2026-02-23T04:59:58.643122Z"
+                writerId: 0q7ctf7sxt5j7cjmbnbub482ozsc2zgl
+        m: []
+        python_version: 3.9.21
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 16
+            "4": 3.9.21
+            "5": 0.25.0
+            "12": 0.25.0
+            "13": linux-x86_64
+K:
+    value: 8
+dataset:
+    value: UBFC
+lambda_reg:
+    value: 0.01
+lr:
+    value: 0.0001

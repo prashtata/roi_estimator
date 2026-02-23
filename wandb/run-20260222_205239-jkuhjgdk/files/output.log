@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/share/crsp/lab/hungcao/prasantt/roi_estimator/full_pipeline_updated.py", line 345, in <module>
+    train(
+  File "/share/crsp/lab/hungcao/prasantt/roi_estimator/full_pipeline_updated.py", line 336, in train
+    "L_con": L_con.item(),
+UnboundLocalError: local variable 'L_con' referenced before assignment
